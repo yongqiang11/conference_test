@@ -27,7 +27,7 @@ class SendMethod:                  # 一个方法中既没有用到cla，或在s
         :param url: 请求的目标网址
         :param method: 请求的方式 get/post 或者 GET/POST
         :param params: dict
-        :param data: dcit
+        :param data: dict
         :return: dict
         """
         # 发送请求

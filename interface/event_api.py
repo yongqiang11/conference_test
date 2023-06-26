@@ -49,12 +49,12 @@ class EventApi:
 
 if __name__ == '__main__':
     event_api = EventApi('http://127.0.0.1:8000')
+
     """
-  
     # 调用添加发布会
     data = {
-        'eid': '298',
-        'name': '荣耀20发布会',
+        'eid': '201',
+        'name': '荣耀201发布会',
         'limit': 20,
         'status': 1,
         'address': '成都',
@@ -62,9 +62,9 @@ if __name__ == '__main__':
     }
     result1 = event_api.add_event(payload=data)
     print(result1)
-      """
-
-    # 调用查询发布会
-    # result2 = event_api.query_event(eid=298)
-    result2 = event_api.query_event(name='荣耀20发布会')
-    print(result2)
+    """
+    #
+    # # 调用查询发布会
+    # # result2 = event_api.query_event(eid=298)
+    # result2 = event_api.query_event(name='荣耀20发布会')
+    # print(result2)
