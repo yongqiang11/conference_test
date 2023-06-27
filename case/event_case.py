@@ -16,7 +16,7 @@ from interface.event_api import EventApi
 """
 
 
-class EventCase:
+class EventCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -39,12 +39,19 @@ class EventCase:
         result = self.event_api.add_event(payload)
         # 提取实际结果和预期结果进行断言
         # data.status = 10200
-        status = result.get('data').get('status')
+        # 如果result是一个空字典，就直接将result设置为None
+        if result:
+            status = result.get('data', {}).get('status', {})
+        else:
+            status = None
         self.assertEqual(status, 10200)
         print(status)
 
     # def query_event(self):
-    #     pass
+    #     # 请求查询发布会接口
+    #     result = self.event_api.query_event(300)
+    #     # 提取实际结果和预期结果进行断言
+
 
 
 if __name__ == '__main__':
